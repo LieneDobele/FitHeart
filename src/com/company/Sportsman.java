@@ -52,6 +52,7 @@ public class Sportsman {
                 System.out.println("You are overweight.");
             } else {
                 System.out.println("You are obese.");
+
             }
         }
     }
