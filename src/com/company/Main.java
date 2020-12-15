@@ -10,6 +10,7 @@ public class Main {
         Scanner input = new Scanner (System.in);
 
         Sportsman person = new Sportsman();
+        Sportsman person1 = new Sportsman();
 
 
 
