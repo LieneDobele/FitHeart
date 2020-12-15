@@ -9,7 +9,7 @@ public class Main {
         Scanner input = new Scanner (System.in);
 
 Sportsman sportsman1 = new Sportsman(input.nextLine(), input.nextInt(), input.nextLine(), input.nextLine());
-sportsman1.getName() = input.nextLine();
+//sportsman1.getName() = input.nextLine(); //commented out
         System.out.println("Please, enter your name");
         String name = input.next();
         System.out.println("Please, enter your age");

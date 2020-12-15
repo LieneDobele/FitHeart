@@ -11,6 +11,9 @@ public class Sportsman {
     private double heightM;
     private double bmi;
 
+    public Sportsman(String name, int age, String nextLine, String nextLine1) {
+    }
+
     public String getName() {
         return name;
     }
@@ -34,15 +37,14 @@ public class Sportsman {
         System.out.println("Your body mass index (BMI) is " + BMI + " .");
         if (isMale) {
             evaluateBmiMan(BMI);
-        }
-        else {
+        } else {
             evaluateBmiWoman(BMI);
         }
         return BMI;
     }
 
 
-    public static void evaluateBmiMan (double bmi) {
+    public static void evaluateBmiMan(double bmi) {
         if (bmi < 18.5) {
             System.out.println("You are underweight.");
         } else if (bmi > 18.5 && bmi < 24.9) {
@@ -55,7 +57,7 @@ public class Sportsman {
     }
 
 
-    public static void evaluateBmiWoman (double bmi) {
+    public static void evaluateBmiWoman(double bmi) {
 
         if (bmi < 19) {
             System.out.println("You are underweight.");
@@ -68,3 +70,5 @@ public class Sportsman {
 
         }
     }
+}
+    
