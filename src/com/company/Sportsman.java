@@ -12,7 +12,7 @@ public class Sportsman {
     private boolean isMale = input.nextBoolean();
     private double weightKg = input.nextDouble();
     private double heightM = input.nextDouble();
-    private double bmi = input.nextDouble();
+    private double bmi;
 
 }
 
