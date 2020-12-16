@@ -97,6 +97,16 @@ public class Sportsman {
                        "walk 12 000 steps, be outside for an 3 hours.");
            }
        }
+        if (bmi > 25){
+            System.out.println("Follow a healthy diet, avoid sugar and refined carbohydrates");
+        }
+        if (isMale) {
+            System.out.println("You should drink 15 cups of water per day");
+        }
+        else if (!isMale){
+            System.out.println("You should drink 11 cups pf water per day");
+
+        }
 
        }
 
