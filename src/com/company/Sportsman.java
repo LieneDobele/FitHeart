@@ -72,24 +72,24 @@ public class Sportsman {
         if (isMale) {
             if (age > 20 && bmi > 18.5 && bmi < 24.9) {
                 System.out.println("For you it’s ideal to sleep 8 hours, " +
-                        "walk 10 000 steps, be outside for 2 hours.");
+                        "walk 10 000 steps, be outside for a 2 hours.");
             } else if (age > 40 && bmi > 18.5 && bmi < 24.9) {
                 System.out.println("For you it’s ideal to sleep 7 hours," +
-                        " walk 9 000 steps, be outside for 1,5 hours.");
+                        " walk 9 000 steps, be outside for a 1,5 hours.");
             } else if (age > 50 && bmi > 18.5 && bmi < 24.9) {
                 System.out.println("For you it’s ideal to sleep 8 hours, " +
-                        "walk 12 000 steps, be outside for 3 hours.");
+                        "walk 12 000 steps, be outside for an 3 hours.");
             }
         } else if (!isMale) {
             if (age > 20 && bmi > 19 && bmi < 25.2) {
                 System.out.println("For you it’s ideal to sleep 8 hours, " +
-                        "walk 10 000 steps, be outside for 2 hours.");
+                        "walk 10 000 steps, be outside for a 2 hours.");
             } else if (age > 40 && bmi > 19 && bmi < 25.2) {
                 System.out.println("For you it’s ideal to sleep 7 hours," +
-                        " walk 9 000 steps, be outside for 1,5 hours.");
+                        " walk 9 000 steps, be outside for a 1,5 hours.");
             } else if (age > 50 && bmi > 19 && bmi < 25.2) {
                 System.out.println("For you it’s ideal to sleep 8 hours, " +
-                        "walk 12 000 steps, be outside for 3 hours.");
+                        "walk 12 000 steps, be outside for an 3 hours.");
             }
         }
 
@@ -104,7 +104,7 @@ public class Sportsman {
             System.out.println("You should drink 15 cups of water per day");
         }
         else if (!isMale){
-            System.out.println("You should drink 11 cups pf water per day");
+            System.out.println("You should drink 11 cups of water per day");
 
         }
 
