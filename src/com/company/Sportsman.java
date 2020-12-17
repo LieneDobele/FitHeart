@@ -28,8 +28,9 @@ public class Sportsman {
     public Sportsman() {
     }
 
-    public void checkGender (){
-        String gender = input.nextLine();
+    public void checkGender (String gender){
+        System.out.println("Please, enter your gender (male or female)");
+        gender = input.nextLine();
         if (gender.equalsIgnoreCase("male")){
             isMale = true;
         }
@@ -41,17 +42,42 @@ public class Sportsman {
         }
     }
 
+    public void registration(){
+        System.out.println("Welcome to FitHeart application! Please, go to registration:");
+        System.out.println();
+        System.out.println("Please, enter your name");
+        name = input.next();
+
+        System.out.println("Please, enter your age");
+        age = input.nextInt();
+        if (age<=14){
+            System.out.println("Please, enter correct age");
+        }
+       checkGender(input.nextLine());
+
+        System.out.println("Please, enter your weight");
+        weightKg = input.nextDouble();
+        if (weightKg<=0){
+            System.out.println("Please, enter correct weight");
+        }
+        System.out.println("Please, enter your height");
+        heightM = input.nextDouble();
+        if (weightKg<=0){
+            System.out.println("Please, enter correct height");
+        }
+        System.out.println(name + " ,thank you for registration! Welcome to FitHeart!");
+    }
 
     public double calculatingBMI(double weightKg, double heightM, boolean isMale) {
-        double BMI = weightKg / (heightM * heightM);
+        double bmi = weightKg / (heightM * heightM);
 
-        System.out.println("Your body mass index (BMI) is " + BMI + " .");
+        System.out.println("Your body mass index (BMI) is " + bmi + " .");
         if (isMale) {
-            evaluateBmiMan(BMI);
+            evaluateBmiMan(bmi);
         } else {
-            evaluateBmiWoman(BMI);
+            evaluateBmiWoman(bmi);
         }
-        return BMI;
+        return bmi;
     }
 
 
@@ -82,6 +108,8 @@ public class Sportsman {
     }
 
     public void advices (double bmi, int age) {
+    age = getAge();
+    bmi = getBmi();
         if (isMale) {
             if (age > 20 && bmi > 18.5 && bmi < 24.9) {
                 System.out.println("For you it’s ideal to sleep 8 hours, " +
@@ -118,10 +146,8 @@ public class Sportsman {
         }
         else if (!isMale){
             System.out.println("You should drink 11 cups of water per day");
-
         }
-
-       }
+}
 
     public int getAge() {
         return age;
@@ -155,4 +181,7 @@ public class Sportsman {
         this.heightM = heightM;
     }
 
+    public double getBmi() {
+        return bmi;
+    }
 }
