@@ -12,6 +12,7 @@ public class Main {
         Sportsman person = new Sportsman();
         Sportsman person1 = new Sportsman();
         Sportsman person3 = new Sportsman();
+        Sportsman person4 = new Sportsman();
 
 
         System.out.println("Please, enter your name");
