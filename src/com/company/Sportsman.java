@@ -69,7 +69,7 @@ public class Sportsman {
     }
 
     public double calculatingBMI(double weightKg, double heightM, boolean isMale) {
-        double bmi = weightKg / (heightM * heightM);
+        double bmi = weightKg / (heightM * heightM); //jāpieliek uz cm
 
         System.out.println("Your body mass index (BMI) is " + bmi + " .");
         if (isMale) {
@@ -107,7 +107,10 @@ public class Sportsman {
         }
     }
 
-    public void advices (double bmi, int age) {
+    double waterIntakeMan = weightKg / 28; //it calculates, how much water need to drink for method advices
+    double waterIntakeWoman = weightKg/ 30; //maybe will need to add class from where it comes
+
+    public void advices (double bmi, int age) { //šī metode jāsakārto
         age = getAge();
         bmi = getBmi();
         if (isMale) {
@@ -137,15 +140,21 @@ public class Sportsman {
         if (bmi > 25){
             System.out.println("Follow a healthy diet, avoid sugar and refined carbohydrates. Don`t eat after 6PM.");
         }
+        //no Lienes svitch!!
+        //System.out.println(); //empty line
+        //            System.out.println("We have prepared a healthy eating plan for you. If you would like to see it, please enter 1.");
+        //            //te vajag user input - un
+        //            //
+        //            // switch no Lienes!
+        //            //kas būs, ja ievadīs 2? - nekas?
         else if (bmi > 19 && bmi < 25){
             System.out.println("Follow a healthy diet.");
 
         }
         if (isMale) {
-            System.out.println("You should drink 15 cups of water per day");
-        }
-        else if (!isMale){
-            System.out.println("You should drink 11 cups of water per day");
+            System.out.println("You should drink " + waterIntakeMan +  " liters of water per day.");
+        } else if (!isMale) {
+            System.out.println("You should drink " + waterIntakeWoman + " liters of water per day.");
         }
     }
 
