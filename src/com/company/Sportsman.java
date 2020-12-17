@@ -1,6 +1,10 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Sportsman {
+
+    Scanner input = new Scanner(System.in);
 
     private String name;
     private int age;
@@ -9,12 +13,8 @@ public class Sportsman {
     private double heightM;
     private double bmi;
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
-        this.name = name;
+    this.name = name;
 
     }
 
@@ -28,7 +28,21 @@ public class Sportsman {
     public Sportsman() {
     }
 
-    public static double calculatingBMI(double weightKg, double heightM, boolean isMale) {
+    public void checkGender (){
+        String gender = input.nextLine();
+        if (gender.equalsIgnoreCase("male")){
+            isMale = true;
+        }
+        else if (gender.equalsIgnoreCase("female")){
+            isMale = false;
+        }
+        else {
+            System.out.println("Enter correct gender");
+        }
+    }
+
+
+    public double calculatingBMI(double weightKg, double heightM, boolean isMale) {
         double BMI = weightKg / (heightM * heightM);
 
         System.out.println("Your body mass index (BMI) is " + BMI + " .");
@@ -41,7 +55,7 @@ public class Sportsman {
     }
 
 
-    public static void evaluateBmiMan(double bmi) {
+    public void evaluateBmiMan(double bmi) {
         if (bmi < 18.5) {
             System.out.println("You are underweight.");
         } else if (bmi > 18.5 && bmi < 24.9) {
@@ -54,7 +68,7 @@ public class Sportsman {
     }
 
 
-    public static void evaluateBmiWoman(double bmi) {
+    public void evaluateBmiWoman(double bmi) {
 
         if (bmi < 19) {
             System.out.println("You are underweight.");
