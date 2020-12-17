@@ -67,7 +67,6 @@ public class Sportsman {
         }
     }
 
-
     public void evaluateBmiWoman(double bmi) {
 
         if (bmi < 19) {
