@@ -8,5 +8,6 @@ public class Main {
         person.registration();
         person.calculatingBMI(person.getWeightKg(), person.getHeightM(), person.isMale());
         person.advices(person.getBmi(), person.getAge());
+        person.healthyDiet();
     }
 }
