@@ -6,7 +6,10 @@ public class Main {
 
         Sportsman person = new Sportsman();
         person.registration();
-        person.calculatingBMI(person.getWeightKg(), person.getHeightM(), person.isMale());
-        person.advices(person.getBmi(), person.getAge());
+        Calculation.calculatingBMI(person.getWeightKg(), (int) person.getHeightM(), person.isMale());
+        Advices.advices(person.getBmi(), person.getAge(), person.getWeightKg());
+        Advices.advicesWater(person.getWeightKg(), person.isMale());
+        Diet.healthyDiet();
+
     }
 }

@@ -1,5 +1,6 @@
 package com.company;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Sportsman {
@@ -13,19 +14,22 @@ public class Sportsman {
     private double heightM;
     private double bmi;
 
-    public void setName(String name) {
-    this.name = name;
-
-    }
-
-    public Sportsman(String name, int age, double weightKg, double heightM) {
-        this.name = name;
-        this.age = age;
-        this.weightKg = weightKg;
-        this.heightM = heightM;
-    }
-
     public Sportsman() {
+    }
+    public void registration(){
+        System.out.println("Welcome to FitHeart application! Please, go to registration:");
+        System.out.println();
+        System.out.println("Please, enter your name");
+        while (input.hasNext()) {
+
+            name = input.next();
+            checkGender(input.nextLine());
+            checkAge();
+            checkWeight();
+            checkHeight();
+            System.out.println(name + " ,thank you for registration! Welcome to FitHeart!");
+            break;
+        }
     }
 
     public void checkGender (String gender){
@@ -42,146 +46,50 @@ public class Sportsman {
         }
     }
 
-    public void registration(){
-        System.out.println("Welcome to FitHeart application! Please, go to registration:");
-        System.out.println();
-        System.out.println("Please, enter your name");
-        name = input.next();
-
+    public void checkAge (){
         System.out.println("Please, enter your age");
         age = input.nextInt();
-        if (age<=14){
+        while (age <= 14 || age>100) {
             System.out.println("Please, enter correct age");
+            age = input.nextInt();
+            break;
         }
-       checkGender(input.nextLine());
-
-        System.out.println("Please, enter your weight");
+    }
+    public void checkWeight (){
+        System.out.println("Please, enter your weight in kg");
         weightKg = input.nextDouble();
-        if (weightKg<=0){
+        while (weightKg <= 30 || weightKg>300) {
             System.out.println("Please, enter correct weight");
+            weightKg = input.nextDouble();
+            break;
         }
-        System.out.println("Please, enter your height");
+    }
+
+    public void checkHeight (){
+        System.out.println("Please, enter your height in cm");
         heightM = input.nextDouble();
-        if (weightKg<=0){
+        while (heightM <= 100 || heightM>220) {
             System.out.println("Please, enter correct height");
-        }
-        System.out.println(name + " ,thank you for registration! Welcome to FitHeart!");
-    }
-
-    public double calculatingBMI(double weightKg, double heightM, boolean isMale) {
-        double bmi = weightKg / (heightM * heightM);
-
-        System.out.println("Your body mass index (BMI) is " + bmi + " .");
-        if (isMale) {
-            evaluateBmiMan(bmi);
-        } else {
-            evaluateBmiWoman(bmi);
-        }
-        return bmi;
-    }
-
-
-    public void evaluateBmiMan(double bmi) {
-        if (bmi < 18.5) {
-            System.out.println("You are underweight.");
-        } else if (bmi > 18.5 && bmi < 24.9) {
-            System.out.println("You have healthy weight.");
-        } else if (bmi > 25.0 && bmi < 29.9) {
-            System.out.println("You are overweight.");
-        } else {
-            System.out.println("You are obese.");
+            break;
         }
     }
-
-    public void evaluateBmiWoman(double bmi) {
-
-        if (bmi < 19) {
-            System.out.println("You are underweight.");
-        } else if (bmi > 19 && bmi < 25.2) {
-            System.out.println("You have healthy weight.");
-        } else if (bmi > 25.3 && bmi < 30.1) {
-            System.out.println("You are overweight.");
-        } else {
-            System.out.println("You are obese.");
-
-        }
-    }
-
-    public void advices (double bmi, int age) {
-    age = getAge();
-    bmi = getBmi();
-        if (isMale) {
-            if (age > 20 && bmi > 18.5 && bmi < 24.9) {
-                System.out.println("For you it’s ideal to sleep 8 hours, " +
-                        "walk 10 000 steps, be outside for a 2 hours.");
-            } else if (age > 40 && bmi > 18.5 && bmi < 24.9) {
-                System.out.println("For you it’s ideal to sleep 7 hours," +
-                        " walk 9 000 steps, be outside for a 1,5 hours.");
-            } else if (age > 50 && bmi > 18.5 && bmi < 24.9) {
-                System.out.println("For you it’s ideal to sleep 8 hours, " +
-                        "walk 12 000 steps, be outside for an 3 hours.");
-            }
-        } else if (!isMale) {
-            if (age > 20 && bmi > 19 && bmi < 25.2) {
-                System.out.println("For you it’s ideal to sleep 8 hours, " +
-                        "walk 10 000 steps, be outside for a 2 hours.");
-            } else if (age > 40 && bmi > 19 && bmi < 25.2) {
-                System.out.println("For you it’s ideal to sleep 7 hours," +
-                        " walk 9 000 steps, be outside for a 1,5 hours.");
-            } else if (age > 50 && bmi > 19 && bmi < 25.2) {
-                System.out.println("For you it’s ideal to sleep 8 hours, " +
-                        "walk 12 000 steps, be outside for an 3 hours.");
-            }
-        }
-
-        if (bmi > 25){
-            System.out.println("Follow a healthy diet, avoid sugar and refined carbohydrates. Don`t eat after 6PM.");
-        }
-        else if (bmi > 19 && bmi < 25){
-            System.out.println("Follow a healthy diet.");
-
-        }
-        if (isMale) {
-            System.out.println("You should drink 15 cups of water per day");
-        }
-        else if (!isMale){
-            System.out.println("You should drink 11 cups of water per day");
-        }
-}
-
-    public int getAge() {
+        public int getAge() {
         return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public boolean isMale() {
         return isMale;
     }
 
-    public void setMale(boolean male) {
-        isMale = male;
-    }
-
     public double getWeightKg() {
         return weightKg;
-    }
-
-    public void setWeightKg(double weightKg) {
-        this.weightKg = weightKg;
     }
 
     public double getHeightM() {
         return heightM;
     }
-
-    public void setHeightM(double heightM) {
-        this.heightM = heightM;
-    }
-
     public double getBmi() {
         return bmi;
     }
+
 }
