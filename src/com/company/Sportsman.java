@@ -53,7 +53,7 @@ public class Sportsman {
         if (age<=14){
             System.out.println("Please, enter correct age");
         }
-       checkGender(input.nextLine());
+        checkGender(input.nextLine());
 
         System.out.println("Please, enter your weight");
         weightKg = input.nextDouble();
@@ -69,7 +69,7 @@ public class Sportsman {
     }
 
     public double calculatingBMI(double weightKg, double heightM, boolean isMale) {
-        double bmi = weightKg / (heightM * heightM);
+        double bmi = weightKg / (heightM * heightM); //jāpieliek uz cm
 
         System.out.println("Your body mass index (BMI) is " + bmi + " .");
         if (isMale) {
@@ -108,6 +108,12 @@ public class Sportsman {
     }
 
     public void advices (double bmi, int age) {
+    double waterIntakeMan = weightKg / 28; //it calculates, how much water need to drink for method advices
+    double waterIntakeWoman = weightKg/ 30; //maybe will need to add class from where it comes
+
+    public void advices (double bmi, int age) { //šī metode jāsakārto
+        age = getAge();
+        bmi = getBmi();
         if (isMale) {
             if (age > 20 && bmi > 18.5 && bmi < 24.9) {
                 System.out.println("For you it’s ideal to sleep 8 hours, " +
@@ -143,6 +149,9 @@ public class Sportsman {
             System.out.println("You should drink 15 cups of water per day");
         } else if (!isMale) {
             System.out.println("You should drink 11 cups of water per day");
+            System.out.println("You should drink " + waterIntakeMan +  " liters of water per day.");
+        } else if (!isMale) {
+            System.out.println("You should drink " + waterIntakeWoman + " liters of water per day.");
         }
     }
         public void healthyDiet() {
@@ -193,6 +202,7 @@ public class Sportsman {
         System.out.println("\t 4 - What to avoid.");
         System.out.println("\t 5 - Don`t forget!");
         System.out.println("\t 6 - To quit the diet suggestions.");
+    }
     }
 
     public int getAge() {
