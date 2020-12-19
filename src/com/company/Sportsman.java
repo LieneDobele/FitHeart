@@ -108,8 +108,6 @@ public class Sportsman {
     }
 
     public void advices (double bmi, int age) {
-        age = getAge();
-        bmi = getBmi();
         if (isMale) {
             if (age > 20 && bmi > 18.5 && bmi < 24.9) {
                 System.out.println("For you it’s ideal to sleep 8 hours, " +
@@ -135,12 +133,12 @@ public class Sportsman {
 
         }
 
-        if (bmi > 25) {
-            System.out.println("Follow a healthy diet, avoid sugar and refined carbohydrates. Don`t eat after 6PM.");
-        } else if (bmi > 19 && bmi < 25) {
-            System.out.println("Follow a healthy diet.");
+       //if (bmi > 25) {
+          //  System.out.println("Follow a healthy diet, avoid sugar and refined carbohydrates. Don`t eat after 6PM.");
+      // } else if (bmi > 19 && bmi < 25) {
+          //  System.out.println("Follow a healthy diet.");
 
-        }
+      //  }
         if (isMale) {
             System.out.println("You should drink 15 cups of water per day");
         } else if (!isMale) {
